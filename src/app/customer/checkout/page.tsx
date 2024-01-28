@@ -26,6 +26,7 @@ export default async function Page({ searchParams }: { searchParams: any }) {
 
   const preferenceResponse = await preference.create({
     body: {
+      marketplace_fee: 10,
       items: [
         {
           id: 'ID PRUEBA',
@@ -44,7 +45,7 @@ export default async function Page({ searchParams }: { searchParams: any }) {
   console.log(preferenceResponse)
   return (
     <div>
-      <a href={preferenceResponse.sandbox_init_point} target='_blank'>
+      <a href={preferenceResponse.init_point} target='_blank'>
         Pagar
       </a>
     </div>
